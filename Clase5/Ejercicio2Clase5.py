@@ -4,6 +4,8 @@ def comprobarPrimo(num):
     for i in range(1, num+1):
         if (num%i==0):
             lista.append(i)
+         if(len(lista)>2):
+            break
     if(len(lista)>2):
         return f'{num} No es un numero primo'
     else:
