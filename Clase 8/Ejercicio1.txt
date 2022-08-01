@@ -1,0 +1,12 @@
+hola
+estoy escribiendo en 
+mi archivo ejemplo de python
+para la clase 8 de 
+openBootcamp
+~Eduardo
+Hola
+Estoy escribiendo en 
+Mi archivo ejemplo de python
+Para la clase 8 de 
+OpenBootcamp
+~Eduardo
