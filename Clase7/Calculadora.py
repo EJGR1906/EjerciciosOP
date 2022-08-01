@@ -1,3 +1,5 @@
+#Modulo Calculadora Ejercicio 1 Clase 7
+
 def Suma(*numeros):
     _total=0
     for num in numeros:
