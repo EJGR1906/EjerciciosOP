@@ -1,13 +1,12 @@
-
 import tkinter
 def main():
     #Creo la ventana
     window=tkinter.Tk()
     window.title('Ejercicio1')
-
     #Definimos las funciones
     def MostrarValor():
-        print(valorRadiobutton.get())
+        label1.config(text=f'{valorRadiobutton.get()}')
+
     def Reiniciar():
         valorRadiobutton.set(0)
         MostrarValor()
@@ -32,6 +31,10 @@ def main():
     #Creamos el button de reinicio
     button=tkinter.Button(frame,text='Reinicio',command=Reiniciar)
     button.pack()
+
+    #Creamos el label
+    label1=tkinter.Label(frame)
+    label1.pack()
 
 
     window.mainloop()
