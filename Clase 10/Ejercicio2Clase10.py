@@ -1,30 +1,32 @@
-from tkinter import messagebox, ttk
-import tkinter as tk
-class Application(ttk.Frame):
+import tkinter
+from tkinter import ttk
+
+class Aplicacion(tkinter.Tk):
+    def __init__(self):
+        #Creamos la ventana
+        self.window=tkinter.Tk()
+        self.window.title('Ejercicio 2 OpenBootcamp Python')
+        self.window.config(bg='gray')
+
+        #Creamos los labels 
+        self.label1= tkinter.Label(self.window,text='Por favor selecciona una opcion:')
+        self.label1.pack(side='top')
+
+        #Creamos la lista seleccionable
+        #Creamos los valores seleccionables
+        self.list_values=['HTML','CSS','JavaScript','Python','C#']
+        self.lista_desplegable=ttk.Combobox(self.window,state='readonly',values=self.list_values)
+        self.lista_desplegable.pack()
+
+        #Creamos un boton 
+        self.button=tkinter.Button(self.window,text='A estudiar!',command=self.Seleccion)
+        self.button.pack()
+
+        self.window.mainloop()
+        #Definimos la funcion 
+    def Seleccion(self):
+        self.label1.config(text=f'Es hora de estudiar {self.lista_desplegable.get()}')
     
-    def __init__(self, main_window):
-        super().__init__(main_window)
-        main_window.title("Combobox")
-        self.combo = ttk.Combobox(
-            self,
-            state="readonly",
-            values=["Python", "C", "C++", "Java"]
-        )
-        self.combo.place(x=50, y=50)
-        self.button = ttk.Button(
-            text="Mostrar selección",
-            command=self.show_selection
-        )
-        self.button.place(x=50, y=100)
-        main_window.config(width=300, height=200)
-        self.place(width=300, height=200)
-    def show_selection(self):
-        # Obtener la opción seleccionada.
-        selection = self.combo.get()
-        messagebox.showinfo(
-            message=f"La opción seleccionada es: {selection}",
-            title="Selección"
-        )
-main_window = tk.Tk()
-app = Application(main_window)
-app.mainloop()
+
+if __name__=='__main__':
+    app=Aplicacion()
